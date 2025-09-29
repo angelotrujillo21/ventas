@@ -1,0 +1,24 @@
+# Ignorar dependencias de Composer
+/vendor/
+
+# Ignorar archivos de entorno
+.env
+
+# Ignorar cachés y logs
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos grandes generados
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bak
+*.sql

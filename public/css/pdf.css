@@ -1,0 +1,336 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #5d6975;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  color: #001028;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-family: Arial;
+}
+
+header {
+  padding: 10px 0;
+}
+
+#logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#logo img {
+  width: 200px;
+}
+
+h1 {
+  border-top: 1px solid #5d6975;
+  border-bottom: 1px solid #5d6975;
+  color: #5d6975;
+  font-size: 2.4em;
+  line-height: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 20px 0;
+  background: url("../images/app/fondo-pdf.png");
+}
+
+.project {
+  float: left;
+}
+
+.project span {
+  color: #5d6975;
+  text-align: right;
+  width: 52px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.mr-datos-cliente span {
+  margin-right: 10px;
+}
+
+.mr-datos-pedido span {
+  margin-right: 40px;
+}
+
+.mr-datos-destino span {
+  margin-right: 55px;
+}
+
+.company {
+  float: right;
+  text-align: right;
+}
+
+.project div,
+.company div {
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+table tr:nth-child(2n-1) td {
+  background: #f5f5f5;
+}
+
+table td {
+  text-align: center;
+}
+
+table th {
+  padding: 5px 15px;
+  color: #5d6975;
+  border-bottom: 1px solid #c1ced9;
+  white-space: pre-wrap;
+  font-weight: normal;
+}
+
+table .service,
+table .desc {
+  text-align: left;
+}
+
+table td {
+  padding: 10px;
+  text-align: right;
+}
+
+table td.service,
+table td.desc {
+  vertical-align: top;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.2em;
+}
+
+table td.grand {
+  border-top: 1px solid #5d6975;
+}
+
+#notices .notice {
+  color: #5d6975;
+  font-size: 1.2em;
+}
+
+footer {
+  color: #5d6975;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #c1ced9;
+  padding: 10px 0;
+  text-align: center;
+  margin-right: 10em;
+}
+
+h3 {
+  color: #5d6975;
+  font-size: 1.2em;
+  line-height: 1em;
+  font-weight: normal;
+}
+
+.row {
+  width: 100%;
+}
+
+.col {
+  width: 50%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.detalle-pedido {
+  border-top: 1px #5d6975 solid;
+  margin-bottom: 30px;
+}
+
+.mb-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.text-center {
+  text-align: center;
+}
+.pl-10 {
+  padding-left: 10%;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.row {
+  display: table;
+  content: " ";
+}
+
+.row {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  float: left;
+  position: relative;
+  border: 0;
+  padding: 0;
+}
+
+.row > div {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.col-xs-1 {
+  width: 7.83333333% !important;
+}
+.col-xs-2 {
+  width: 16.16666667% !important;
+}
+.col-xs-3 {
+  width: 24.5% !important;
+}
+.col-xs-4 {
+  width: 33.33% !important;
+}
+.col-xs-5 {
+  width: 41.16666667% !important;
+}
+.col-xs-6 {
+  width: 49.5% !important;
+}
+.col-xs-7 {
+  width: 57.83333333% !important;
+}
+.col-xs-8 {
+  width: 66.16666667% !important;
+}
+.col-xs-9 {
+  width: 74.5% !important;
+}
+.col-xs-10 {
+  width: 82.83333333% !important;
+}
+.col-xs-11 {
+  width: 91, 16666666% !important;
+}
+.col-xs-12 {
+  width: 99.5% !important;
+}
+
+.logo-mov {
+  text-align: left;
+}
+
+.logo-mov {
+  width: 150px;
+}
+
+.h1-mov {
+  color: #5d6975;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 10px 0 20px 0;
+}
+
+.cod-mov {
+  width: 100%;
+  padding-left: 50px;
+  color: #5d6975;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 16px 0 20px 0;
+  font-weight: bold;
+}
+
+.span-content-mov {
+  color: #5d6975;
+  display: inline-block;
+  font-size: 0.8em;
+}
+

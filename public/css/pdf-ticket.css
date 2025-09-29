@@ -1,0 +1,288 @@
+* {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+.ticket {
+  margin: 2px;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+table thead tr th {
+  font-size: 11px;
+  color: #000;
+  border-top: 1px dotted #000;
+  border-bottom: 1px dotted #000;
+}
+
+table thead tr td {
+  border-top: 1px dotted #fff;
+  border-bottom: 1px dotted #fff;
+}
+
+.border-top {
+  border-top: 1px dotted #000;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-footer {
+  font-size: 11px !important;
+}
+
+.mt-table {
+  margin-top: 4px;
+}
+
+th,
+tr,
+table {
+  border-collapse: collapse;
+}
+
+td.producto,
+td.cantidad,
+td.precio {
+  color: #000;
+  font-size: 10px;
+  padding: 2px 4px;
+}
+
+td.precio {
+  text-align: right;
+}
+
+td.producto {
+  text-align: left;
+}
+
+.centrado {
+  text-align: center;
+  align-content: center;
+}
+
+ 
+.ticket {
+  width: 100px; /*Medida ticket*/
+  max-width: 100px; /*Medida ticket*/
+}
+
+img {
+  max-width: inherit;
+  width: inherit;
+}
+
+.ticket {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0;
+  text-align: center;
+  margin-right: 10em;
+  font-size: 8px;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: black;
+  background: white;
+  font-family: sans-serif;
+  font-size: 10.5px;
+  font-weight	: normal;
+ }
+
+ 
+ 
+.row {
+  display: table;
+  content: " ";
+}
+
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  float: left;
+  position: relative;
+  border: 0;
+  padding: 0;
+}
+
+.row > div {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.col-xs-1 {
+  width: 7.83333333% !important;
+}
+.col-xs-2 {
+  width: 16.16666667% !important;
+}
+.col-xs-3 {
+  width: 24.5% !important;
+}
+.col-xs-4 {
+  width: 33.33% !important;
+}
+.col-xs-5 {
+  width: 41.16666667% !important;
+}
+.col-xs-6 {
+  width: 49.5% !important;
+}
+.col-xs-7 {
+  width: 57.83333333% !important;
+}
+.col-xs-8 {
+  width: 66.16666667% !important;
+}
+.col-xs-9 {
+  width: 74.5% !important;
+}
+.col-xs-10 {
+  width: 82.83333333% !important;
+}
+.col-xs-11 {
+  width: 91, 16666666% !important;
+}
+.col-xs-12 {
+  width: 99.5% !important;
+}
+
+.titulo {
+  color: #000;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 1px;
+}
+
+.direccion {
+  color: #000;
+  display: inline-block;
+  font-size: 10.5px;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.nro-ticket {
+  color: #000;
+  display: inline-block;
+  font-size: 11px;
+}
+
+.content-direccion {
+  margin: 0;
+  padding: 0;
+}
+
+.t-cliente {
+  font-weight: bold;
+  font-size: 11px;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.desc-cliente {
+  color: #000;
+  font-weight: 500;
+  font-size: 10.5px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.font-9 {
+  font-size: 10px;
+}
+
+.font-10 {
+  font-size: 11px;
+}
+
+.color-plomo,
+.color-footer {
+  color: #000;
+}
+.atencion {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.agradecimiento {
+  padding: 10px 0;
+  border-top: 1px dotted #000;
+  border-bottom: 1px dotted #000;
+  margin-top: 5px;
+}
+
+.qr {
+  padding: 5px 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+table th{
+  font-weight: normal;
+}

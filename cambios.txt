@@ -1,0 +1,93 @@
+Modulo 
+Tesoreria
+
+Mantenimiento Bancos 
+Cuentas Corrientes 
+Tipos de cuentas
+
+
+
+bancos
+----------------
+nIdBanco
+nIdEmpresa
+nIdSede
+sNombre
+sDescripcion
+sImagen
+nEstado
+
+cuentascorrientes
+-----------------------------
+nIdCuentaCorriente
+nIdBanco
+sNumero
+nIdTipoCuenta
+sEstado
+
+tiposcuentas
+------------------------------
+nIdTipoCuenta
+sNombre
+sDescripcion
+nEstado
+
+
+cuentascorrientesmetodospago
+------------
+nIdCuentaCorrienteMP
+nIdEmpresa
+nIdSede
+nIdCuentaCorriente
+nIdMetodoPago
+nEstado
+
+movimientostesoreria 
+----------------------------------
+nIdMovimientoTesoreria
+nIdCuentaCorriente
+sDescripcion
+nTipoEntidad
+nIdEntidad
+nTipo 1 Ingreso 2 Salida
+nMonto
+nTipoMoneda
+nTipoCambio
+dFechaRegistro
+nEstado
+
+CAMBIOS EN LA BD 
+----------------------------------
+Agregar tablas para tesoreria 
+Agregar modulo y submodulo de tesoreria 
+Agregar columna de flag para ver si el empleado es motorizado en la tabla empleados
+ALTER TABLE `empleados` ADD `nDelivery` INT(1) NOT NULL COMMENT '1 Personal delivery\r\n0 Personal normal' AFTER `nPorcentajeComision`; 
+
+ALTER TABLE `pedidos` ADD `nIdResponsableDelivery` INT(11) NULL AFTER `nTotal`; 
+
+Se agregara nidproveedor ala tabla orden de compra
+validar en la vista orden de compra
+
+- Se agrego las tablas documentopago y documentopagodetalle
+
+
+MEJORAS 
+*****************************
+Tesoreria Cuentas corrientas 
+Por default en el propiertario poner el nombre de la empresa 
+
+Movimientos libros bancos 
+- Al generar un movimeinto interno poner la descripcion por ejmeplo en una venta o egreso poner INGRESO POR VENTA NR VENTA O PEDIDO
+- Al filtar poner el desde y hasta del mes actual por defecto .
+
+Ventas 
+----------
+al realizar la venta al seleccionar un metodo de pago y se cargan las cuentas corrientes si solo es uno que se seleccione automaticamente , si es e varios que tenga la opcion de seleccionar 
+- Agregar un filtro por clientes
+
+Agregar un reporte motorizado 
+un reporte
+
+Reporte motorizado
+Reporte de ventas por motorizado mostrar las ventas que le pertencen a un motorizado 
+- Se debe agregar reportemotorrizado en reporte de ventas 
