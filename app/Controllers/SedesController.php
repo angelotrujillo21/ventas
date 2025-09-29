@@ -120,6 +120,11 @@ class SedesController extends Controller
             $nTipoMoneda             = isset($_POST['nTipoMoneda']) ? $_POST['nTipoMoneda'] : null;
             $sImagen                 = isset($_FILES['sImagen']) ? $_FILES['sImagen'] : null;
             $sDescripcion            = isset($_POST['sDescripcion']) ? $_POST['sDescripcion'] : null;
+            $nProduccionSUNAT        = isset($_POST['nProduccionSUNAT']) ? $_POST['nProduccionSUNAT'] : null;
+            $sRutaProdSUNAT          = isset($_POST['sRutaProdSUNAT']) ? $_POST['sRutaProdSUNAT'] : null;
+            $sTokenProdSUNAT         = isset($_POST['sTokenProdSUNAT']) ? $_POST['sTokenProdSUNAT'] : null;
+            $sRutaBetaSUNAT          = isset($_POST['sRutaBetaSUNAT']) ? $_POST['sRutaBetaSUNAT'] : null;
+            $sTokenBetaSUNAT         = isset($_POST['sTokenBetaSUNAT']) ? $_POST['sTokenBetaSUNAT'] : null;
             $nEstado                 = isset($_POST['nEstado']) ? $_POST['nEstado'] : null;
 
             // Valida valores del formulario
@@ -147,6 +152,11 @@ class SedesController extends Controller
                     $nTipoTicket,
                     $sNombreImagen,
                     $sDescripcion,
+                    $nProduccionSUNAT,
+                    $sRutaProdSUNAT,
+                    $sTokenProdSUNAT,
+                    $sRutaBetaSUNAT,
+                    $sTokenBetaSUNAT,
                     $nEstado
                 );
                 // Crear Sede 1 
@@ -180,6 +190,11 @@ class SedesController extends Controller
                     $nTipoTicket,
                     $sNombreImagen,
                     $sDescripcion,
+                    $nProduccionSUNAT,
+                    $sRutaProdSUNAT,
+                    $sTokenProdSUNAT,
+                    $sRutaBetaSUNAT,
+                    $sTokenBetaSUNAT,
                     $nEstado
                 );
             }

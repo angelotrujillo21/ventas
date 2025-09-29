@@ -23,6 +23,11 @@ class Sedes
         $nTipoTicket,
         $sImagen,
         $sDescripcion,
+        $nProduccionSUNAT,
+        $sRutaProdSUNAT,
+        $sTokenProdSUNAT,
+        $sRutaBetaSUNAT,
+        $sTokenBetaSUNAT,
         $nEstado
     ) {
 
@@ -36,6 +41,11 @@ class Sedes
             "nTipoTicket"       => $nTipoTicket,
             "sImagen"           => $sImagen,
             "sDescripcion"      => $sDescripcion,
+            "nProduccionSUNAT"  => $nProduccionSUNAT,
+            "sRutaProdSUNAT"    => $sRutaProdSUNAT,
+            "sTokenProdSUNAT"   => $sTokenProdSUNAT,
+            "sRutaBetaSUNAT"    => $sRutaBetaSUNAT,
+            "sTokenBetaSUNAT"   => $sTokenBetaSUNAT,
             "nEstado"           => $nEstado,
         ]);
 
@@ -57,6 +67,11 @@ class Sedes
         $nTipoTicket,
         $sImagen,
         $sDescripcion,
+        $nProduccionSUNAT,
+        $sRutaProdSUNAT,
+        $sTokenProdSUNAT,
+        $sRutaBetaSUNAT,
+        $sTokenBetaSUNAT,
         $nEstado
     ) {
 
@@ -70,6 +85,11 @@ class Sedes
             "nTipoTicket"       => $nTipoTicket,
             "sImagen"           => $sImagen,
             "sDescripcion"      => $sDescripcion,
+            "nProduccionSUNAT"  => $nProduccionSUNAT,
+            "sRutaProdSUNAT"    => $sRutaProdSUNAT,
+            "sTokenProdSUNAT"   => $sTokenProdSUNAT,
+            "sRutaBetaSUNAT"    => $sRutaBetaSUNAT,
+            "sTokenBetaSUNAT"   => $sTokenBetaSUNAT,
             "nEstado"           => $nEstado,
         ], "nIdSede = $nIdSede");
 
@@ -106,6 +126,11 @@ class Sedes
                     s.nTipoTicket,
                     s.sImagen,
                     s.sDescripcion,
+                    s.nProduccionSUNAT,
+                    s.sRutaProdSUNAT,
+                    s.sTokenProdSUNAT,
+                    s.sRutaBetaSUNAT,
+                    s.sTokenBetaSUNAT,
                     IFNULL(  emp.sDireccion, '' ) AS sDireccionEmp,
                     IFNULL(  emp.sNumeroDocumento, '' ) AS sNumeroDocEmp,
                     IFNULL( tipodocemp.sDescripcionCortaItem,'' ) AS sTipoDocEmp, 
