@@ -144,6 +144,45 @@
                                                             </div>
                                                         </div>
 
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="nProduccionSUNAT" class="col-form-label">Producción SUNAT</label>
+                                                                <select class="form-control" name="nProduccionSUNAT" id="nProduccionSUNAT">
+                                                                    <option value="">SELECCIONAR</option>
+                                                                    <option value="1">Producción</option>
+                                                                    <option value="0">Beta</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="sRutaProdSUNAT" class="col-form-label">Ruta Producción SUNAT</label>
+                                                                <input type="text" autocomplete="off" placeholder="" class="form-control" name="sRutaProdSUNAT" id="sRutaProdSUNAT">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="sTokenProdSUNAT" class="col-form-label">Token Producción SUNAT</label>
+                                                                <input type="text" autocomplete="off" placeholder="" class="form-control" name="sTokenProdSUNAT" id="sTokenProdSUNAT">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="sRutaBetaSUNAT" class="col-form-label">Ruta Beta SUNAT</label>
+                                                                <input type="text" autocomplete="off" placeholder="" class="form-control" name="sRutaBetaSUNAT" id="sRutaBetaSUNAT">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="sTokenBetaSUNAT" class="col-form-label">Token Beta SUNAT</label>
+                                                                <input type="text" autocomplete="off" placeholder="" class="form-control" name="sTokenBetaSUNAT" id="sTokenBetaSUNAT">
+                                                            </div>
+                                                        </div>
+
                                                         <div id="content-button-submit" class="col-12 text-right">
                                                             <button type="submit" class="btn btn-gradient-primary btn-fw btn-submit">Guardar</button>
                                                         </div>
@@ -217,7 +256,11 @@
             var nTipoTicket   = $("#nTipoTicketSede").val();
             var sDescripcion  = $("#sDescripcionSede").val();
 
-            
+            var nProduccionSUNAT = $("#nProduccionSUNAT").val();
+            var sRutaProdSUNAT   = $("#sRutaProdSUNAT").val();
+            var sTokenProdSUNAT  = $("#sTokenProdSUNAT").val();
+            var sRutaBetaSUNAT   = $("#sRutaBetaSUNAT").val();
+            var sTokenBetaSUNAT  = $("#sTokenBetaSUNAT").val();
 
             var sImagen = $("#sImagenSede")[0].files[0];
             var nEstado = $("#nEstadoSede").val();
@@ -243,6 +286,9 @@
             } else if (nTipoTicket == '0') {
                 toastr.error('Error. Seleccione un tipo de ticket. Porfavor verifique');
                 return;
+            } else if (nProduccionSUNAT == '') {
+                toastr.error('Error. Seleccione el tipo de producción SUNAT. Porfavor verifique');
+                return;
             }
 
 
@@ -256,6 +302,11 @@
             formData.append('nTipoTicket', nTipoTicket);
             formData.append('sTelefono', sTelefono);
             formData.append('sDescripcion', sDescripcion);
+            formData.append('nProduccionSUNAT', nProduccionSUNAT);
+            formData.append('sRutaProdSUNAT', sRutaProdSUNAT);
+            formData.append('sTokenProdSUNAT', sTokenProdSUNAT);
+            formData.append('sRutaBetaSUNAT', sRutaBetaSUNAT);
+            formData.append('sTokenBetaSUNAT', sTokenBetaSUNAT);
             formData.append('sImagen', sImagen);
             formData.append('nEstado', nEstado);
 
@@ -310,6 +361,11 @@
                 $("#nTipoTicketSede").val(aryData.nTipoTicket);
                 $("#nEstadoSede").val(aryData.nEstado);
                 $("#sDescripcionSede").val(aryData.sDescripcion);
+                $("#nProduccionSUNAT").val(aryData.nProduccionSUNAT);
+                $("#sRutaProdSUNAT").val(aryData.sRutaProdSUNAT);
+                $("#sTokenProdSUNAT").val(aryData.sTokenProdSUNAT);
+                $("#sRutaBetaSUNAT").val(aryData.sRutaBetaSUNAT);
+                $("#sTokenBetaSUNAT").val(aryData.sTokenBetaSUNAT);
 
 
                 if (aryData.sImagen.length > 0) $("label[for='sImagenSede']").html(aryData.sImagen);
