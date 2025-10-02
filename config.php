@@ -48,7 +48,7 @@ define('NOMBRE_SITIO', 'Sistema Multitienda');
 
 
 
-define('IGV', 8);
+define('IGV', 18);
 
 define('SIMBOLO_MONEDA', ' S./ ');
 

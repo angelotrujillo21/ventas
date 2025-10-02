@@ -326,9 +326,14 @@ class Pedidos
                         IFNULL(mt.nIdCuentaCorriente , 0) AS nIdCuentaCorriente,
                         p.nEstado,
                         IFNULL(p.nIdPedidoCD,0) AS nIdPedidoCD,
-                        IFNULL(p.nIdCotizacion,0) AS nIdCotizacion
+                        IFNULL(p.nIdCotizacion,0) AS nIdCotizacion,
+
+                        IFNULL(tipodocumentocli.sCodigoItem,'') AS sCodigoDocumentoCliente,
+                        IFNULL(cli.sDireccion,'') AS sDireccionCliente
                 FROM pedidos AS p
                 LEFT JOIN clientes AS cli ON p.nIdCliente = cli.nIdCliente 
+                LEFT JOIN catalogotabla AS tipodocumentocli ON cli.nTipoDocumento = tipodocumentocli.nIdCatalogoTabla 
+
                 LEFT JOIN pedidosdetalle AS pd ON p.nIdPedido = pd.nIdPedido   
                 LEFT JOIN metodosenvio AS me ON p.nIdMetodoEnvio = me.nIdMetodoEnvio   
                 LEFT JOIN metodospago AS mp ON p.nIdMetodoPago = mp.nIdMetodoPago   

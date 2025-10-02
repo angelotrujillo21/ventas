@@ -327,11 +327,15 @@ $router->any('unidadesMedida/fncImportarUnidadesMedidasPorDefault', 'UnidadMedid
 // Mantenimiento Documentos
 
 $router->any('documentos/fncAnularDocumentoPedido', 'DocumentosController@fncAnularDocumentoPedido');
-$router->any('documentos/fncPopulateDocumentosParaAnulaciones', 'DocumentosController@fncPopulateDocumentosParaAnulaciones');
+$router->any('documentos/fncPopulate', 'DocumentosController@fncPopulate');
 $router->any('documentos/fncGrabarDocumento', 'DocumentosController@fncGrabarDocumento');
 $router->any('documentos/fncMostrarRegistro', 'DocumentosController@fncMostrarRegistro');
 $router->any('documentos/fncEliminarRegistro', 'DocumentosController@fncEliminarRegistro');
-$router->any('anulaciones', 'DocumentosController@anulaciones');
+$router->any('documentos/fncAnularDocumentoSunat', 'DocumentosController@fncAnularDocumentoSunat');
+$router->any('documentos/fncEnviarXMLCPE', 'DocumentosController@fncEnviarXMLCPE');
+$router->any('documentos/fncEnviarMultipleXMLCPE', 'DocumentosController@fncEnviarMultipleXMLCPE');
+$router->any('documentos/fncEnviarComprobanteCustom', 'DocumentosController@fncEnviarComprobanteCustom');
+$router->any('documentos-electronicos', 'DocumentosController@documentos');
 
 // Fin del Documentos
 

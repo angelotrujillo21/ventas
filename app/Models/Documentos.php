@@ -120,20 +120,22 @@ class Documentos
     {
 
         $aryAllFilters = [
-            "sOrderBy"         => "doc.nIdDocumento DESC",
-            "sLimit"           => null,
-            "nIdDocumento"     => null,
-            "nIdPedido"        => null,
-            "nIdEmpresa"       => null,
-            "nIdSede"          => null,
-            "nIdEmpleado"      => null,
-            "dFechaInicio"     => null,
-            "dFechaFin"        => null,
-            "dFechaEmision"    => null,
-            "dFechaCreacion"   => null,
-            "nEstado"          => null
+            "sOrderBy"              => "doc.nIdDocumento DESC",
+            "sLimit"                => null,
+            "nIdDocumento"          => null,
+            "nIdPedido"             => null,
+            "nIdEmpresa"            => null,
+            "nIdSede"               => null,
+            "nIdEmpleado"           => null,
+            "dFechaInicio"          => null,
+            "dFechaFin"             => null,
+            "dFechaEmision"         => null,
+            "dFechaCreacion"        => null,
+            "nEstado"               => null,
+            "nIdTipoComprobante"    => null,
+            "sEstatusXML"           => null
         ];
-
+         
         $ary = $this->db->filterArray($aryInput, $aryAllFilters);
 
         $sSQL = "SELECT DISTINCT
@@ -158,12 +160,33 @@ class Documentos
                         IFNULL(tipodocumento.sDescripcionCortaItem,'') AS sTipoDocumento,
 
                         IFNULL(p.sNumero,'') AS sNumeroPedido,
+                        IFNULL(p.nFacturado,'') AS nFacturadoPedido,
+                        emp.sNombre AS sEmpresa,
+ 
+                        doc.nEstado,
+                        p.nIdEmpresa,
+                        p.nIdSede,
+ 
+                        doc.statusXML,
+                        doc.enlace,
+                        doc.aceptada_por_sunat,
+                        doc.sunat_description,
+                        doc.sunat_note,
+                        doc.sunat_responsecode,
+                        doc.cadena_para_codigo_qr,
+                        doc.codigo_hash,
 
-                        doc.nEstado
+                        p.nSubTotal as nSubTotalPedido,
+                        p.nIgv as nIgvPedido,
+                        p.nTotal as nTotalPedido,
+                        p.nDespachado as nDespachadoPedido
+
+
                 FROM documentos AS doc
                 LEFT JOIN pedidos AS p ON doc.nIdPedido = p.nIdPedido 
                 LEFT JOIN clientes AS cli ON p.nIdCliente = cli.nIdCliente 
-                 
+                LEFT JOIN empresas AS emp ON p.nIdEmpresa = emp.nIdEmpresa 
+
                 LEFT JOIN empleados AS emp ON p.nIdResponsable = emp.nIdEmpleado
                 LEFT JOIN usuarios AS usu ON p.nIdResponsable = usu.nIdUsuario
 
@@ -174,6 +197,8 @@ class Documentos
                 ";
 
         $sWhere = "";
+
+        $sWhere .= ($this->db->isNull($ary["nIdTipoComprobante"]) ? '' : (strlen($sWhere) > 0 ? " AND " : "") . " doc.nIdTipoComprobante = {$this->db->quote($ary['nIdTipoComprobante'])}  ");
 
         $sWhere .= ($this->db->isNull($ary["nIdDocumento"]) ? '' : (strlen($sWhere) > 0 ? " AND " : "") . " doc.nIdDocumento = {$this->db->quote($ary['nIdDocumento'])}  ");
         
@@ -191,6 +216,8 @@ class Documentos
 
         $sWhere .= ($this->db->isNull($ary["dFechaCreacion"]) ? '' : (strlen($sWhere) > 0 ? " AND " : "") . " DATE(doc.dFechaCreacion) =  STR_TO_DATE( '" . $ary['dFechaCreacion'] . "', '%d/%m/%Y' )  ");
 
+        $sWhere .= ($this->db->isNull($ary["sEstatusXML"]) ? '' : (strlen($sWhere) > 0 ? " AND " : "") . " doc.statusXML = {$this->db->quote($ary['sEstatusXML'])}  ");
+
         $sWhere .= ($this->db->isNull($ary["nEstado"]) ? '' : (strlen($sWhere) > 0 ? " AND " : "") . " p.nEstado = {$this->db->quote($ary['nEstado'])}  ");
 
         $sSQL   .= (strlen($sWhere) > 0 ? ' WHERE ' : '') . $sWhere;
@@ -204,4 +231,47 @@ class Documentos
 
         return $this->db->run(trim($sSQL));
     }
+
+
+    public function fncActualizarErrorNBFACT(
+        $nIdDocumento,
+        $error_nubefact
+    ) {
+
+        $sSQL =  $this->db->generateSQLUpdate("documentos", [
+            "error_nubefact"   => $error_nubefact,
+        ], "nIdDocumento = $nIdDocumento");
+
+        return $this->db->run($sSQL);
+    }
+
+
+    public function fncActualizarDatosCPE2(
+        $nIdDocumento,
+        $statusXML,
+        $enlace,
+        $aceptada_por_sunat,
+        $sunat_description,
+        $sunat_note,
+        $sunat_responsecode,
+        $cadena_para_codigo_qr,
+        $codigo_hash
+    ) {
+
+        $sSQL =  $this->db->generateSQLUpdate("documentos", [
+            "statusXML"                 => $statusXML,
+            "enlace"                    => $enlace,
+            "aceptada_por_sunat"        => $aceptada_por_sunat,
+            "sunat_description"         => $sunat_description,
+            "sunat_note"                => $sunat_note,
+            "sunat_responsecode"        => $sunat_responsecode,
+            "cadena_para_codigo_qr"     => $cadena_para_codigo_qr,
+            "codigo_hash"               => $codigo_hash,
+            "dFechaEmision"             => "NOW()"
+        ], "nIdDocumento = $nIdDocumento");
+
+        return $this->db->run($sSQL);
+    }
+
+
 }
